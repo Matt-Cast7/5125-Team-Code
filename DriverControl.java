@@ -50,7 +50,7 @@ public class DriverControl extends LinearOpMode
             FRspeed = Range.clip(FRspeed, -1, 1);
             BRspeed = Range.clip(BRspeed, -1, 1);
 
-            if (gamepad1.right_stick_x == 0)
+            if (gamepad1.right_stick_x ==0)
             {
 
                 FRMotor.setPower(FRspeed);
@@ -58,13 +58,13 @@ public class DriverControl extends LinearOpMode
                 FLMotor.setPower(FLspeed);
                 BRMotor.setPower(BRspeed);
 
+
             }else
                 {
                     FRMotor.setPower(RSpeed);
                     BLMotor.setPower(-RSpeed);
                     FLMotor.setPower(-RSpeed);
                     BRMotor.setPower(RSpeed);
-
                 }
             if (gamepad2.a)
             {
