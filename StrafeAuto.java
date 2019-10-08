@@ -11,8 +11,8 @@ import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
-@Autonomous(name = "RedFrontZone", group = "Autonomous")
-public class RedFrontZone extends LinearOpMode {
+@Autonomous(name = "StrafeAuto", group = "Autonomous")
+public class StrafeAuto extends LinearOpMode {
 
 
     private DcMotor FRMotor;
@@ -33,18 +33,39 @@ public class RedFrontZone extends LinearOpMode {
         BRMotor = hardwareMap.dcMotor.get("BRMotor");
         BLMotor = hardwareMap.dcMotor.get("BLMotor");
 
+        Claw = hardwareMap.get(Servo.class, "Claw");
+
         waitForStart();
 
         BLMotor.setPower(-1);
         FRMotor.setPower(1);
-        FLMotor.setPower(-1);
-        BRMotor.setPower(1);
-        sleep(300);
+        FLMotor.setPower(1);
+        BRMotor.setPower(-1);
+        sleep(1000);
         BLMotor.setPower(0);
         FRMotor.setPower(0);
         FLMotor.setPower(0);
         BRMotor.setPower(0);
+        sleep(1000);
+
+        Claw.setPosition(1);
+
+        sleep(2000);
+
+        BLMotor.setPower(1);
+        FRMotor.setPower(-1);
+        FLMotor.setPower(-1);
+        BRMotor.setPower(1);
+
+        sleep(1000);
+
+        BLMotor.setPower(0);
+        FRMotor.setPower(0);
+        FLMotor.setPower(0);
+        BRMotor.setPower(0);
+
         sleep(40000);
+
         idle();
 
     }
