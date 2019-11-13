@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -16,9 +17,10 @@ public class Bot
     public DcMotor BLMotor;
     public Servo Claw;
     public Servo Claw2;
+    public CRServo LiftClaw1;
+    public CRServo LiftClaw2;
     public DcMotor Lift1;
     public DcMotor Lift2;
-
 
     HardwareMap hwMap;
 
@@ -36,6 +38,8 @@ public class Bot
         BLMotor = hwMap.dcMotor.get("BLMotor");
         Claw = hwMap.get(Servo.class, "Claw");
         Claw2 = hwMap.get(Servo.class, "Claw2");
+        LiftClaw1 = hwMap.get(CRServo.class, "LiftClaw1");
+        LiftClaw2 = hwMap.get(CRServo.class, "LiftClaw2");
         Lift1 = hwMap.dcMotor.get("Lift1");
         Lift2 = hwMap.dcMotor.get("Lift2");
 
